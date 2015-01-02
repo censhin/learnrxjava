@@ -127,11 +127,11 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             // Note that you can apply a projectionFunction to a value like this:
             //  projectionFunction.apply(5)
             // ------------ INSERT CODE HERE! ----------------------------
-            
+           result.add(projectionFunction.apply(itemInList));
         });
         
-        //return results;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return results;
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
     
     /*
@@ -148,8 +148,10 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             new Video(675465, "Fracture", 5.0));
          
         // complete this expression 
-        // return newReleases.map(video -> 
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return newReleases.map(video ->  {
+            return json("id", video.id, "title", video.title)
+        });
+        // throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
@@ -190,10 +192,13 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             // Insert code here that adds a video to the highRatedVideos list
             // if it has a rating of 5.0.
 
+            if(video.rating >= 5.0) {
+                highRatedVideos.add(video)
+            }
         });
         
-        // return highRatedVideos;
-        throw new UnsupportedOperationException("Not implemented yet.");        
+        return highRatedVideos;
+        // throw new UnsupportedOperationException("Not implemented yet.");        
     }
     
     /*
